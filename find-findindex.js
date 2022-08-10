@@ -35,5 +35,7 @@ function removeUser(usersArray, username) {
   let index = usersArray.findIndex(function(value){
     return value.username == username;
   })
-  return usersArray.splice(index, 1);
+  if (index == -1){
+    return undefined;
+  return usersArray.splice(index, 1)[0];
 }
